@@ -1,186 +1,418 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-        casting industry @1500 MT per year">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Golden Ceramic Works (P) Ltd.</title>
+  <meta name="description" content="Explore the full range of refractory products from Golden Ceramic Works — shaped and unshaped refractories for steel casting, foundry, and kiln applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .products-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .products-intro .count-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--gold-light, #fef3c7);
+      color: var(--gold-dark, #92400e);
+      font-size: .85rem;
+      font-weight: 600;
+      padding: .35rem .9rem;
+      border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+    .specs-list {
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .specs-list li {
+      font-size: .8rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .specs-list li::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .request-specs {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .request-specs h3 {
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+    .request-specs p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .request-specs .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
 
-        <meta name="keywords" content="golden, ceramic, works, pvt, ltd, jharkhand, refractories, chirkunda,
-        fire bricks, gcw, gcwpl, golden ceramic works pvt ltd, golden ceramic, india, jharkhand, best refractory,
-        best refractory in jharkhand, dhanbad, gcwpl chirkunda, gcwpl dhanbad">
-        <meta name="author" content="Golden Ceramic Works (P) Ltd.">
-        <meta name="theme-color" content="#3d0000">
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-        <title>Products -- Golden Ceramic Works Pvt Ltd. - Best refractory in Jharkhand!</title>
+  <div class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="products.html" onclick="closeMobileNav()">Products</a>
+    <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+  </div>
 
-        <link rel="icon" href="assets/img/favicon.ico">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span><span>Products</span>
+      </div>
+      <h1>Our Products</h1>
+      <p>Shaped and unshaped refractory solutions engineered for performance.</p>
+    </div>
+  </div>
 
-        <link href="assets/css/myStyle.css" rel="stylesheet">
-        <link href="assets/css/animate.css" rel="stylesheet">
+  <section class="section">
+    <div class="container">
+      <div class="products-intro animate">
+        <div class="count-badge">14 Products</div>
+        <h2 class="section-title">14 Products, One Standard of Excellence</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto">Every product in our range is manufactured with precision, tested in our in-house laboratory, and built to withstand the most demanding industrial environments.</p>
+      </div>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script>
-            new WOW().init();
-        </script>
-        <link href="https://fonts.googleapis.com/css?family=Rambla" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
-    </head>
+      <div class="products-grid">
 
-    <body>
-        <div class="loader">
-            <img src="assets/img/logo.png" width="260px" class="img-responsive projectGrid" alt=""> <br>
-            <img src="assets/img/loader.svg" class="img-responsive projectGrid" alt="">
+        <div class="product-card animate" data-category="shaped bricks">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/roof-set-bricks.png" alt="Roof Set Bricks" />
+          </div>
+          <div class="product-info">
+            <h3>Roof Set Bricks</h3>
+            <p>Designed for EAF and LRF roofs, engineered to withstand extreme thermal cycling and arc exposure.</p>
+            <ul class="specs-list">
+              <li>High thermal shock resistance</li>
+              <li>Precise dimensional tolerances</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="custom-body">
-                <!-- navbar starts -->
-            <nav class="navbar navbar-toggleable-md navbar-light white">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" width="240" alt="">
-                </a>
-                <div class="collapse navbar-collapse" style="float : right" id="navbarText">
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-                <!-- Product section -->
-            <div class="product-section section">
-                <center>
-                    Our Products
-                    <div class="custom-dash"></div>
-                </center>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/burner-block.png" class="product-img wow fadeIn" data-wow-delay="0.2s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/fireclay-mortar.png" class="product-img wow fadeIn" data-wow-delay="0.4s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/foundry-brick.png" class="product-img wow fadeIn" data-wow-delay="0.6s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/ha-nozzle.png" class="product-img wow fadeIn" data-wow-delay="0.8s">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/bottom-block.png" class="product-img wow fadeIn" data-wow-delay="0.2s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/coke-oven-brick.png" class="product-img wow fadeIn" data-wow-delay="0.4s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/ha-bricks.png" class="product-img wow fadeIn" data-wow-delay="0.6s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/high-alumina-mortar.png" class="product-img wow fadeIn" data-wow-delay="0.8s">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/laddle-sleeves.png" class="product-img wow fadeIn" data-wow-delay="0.2s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/pouring-set.png" class="product-img wow fadeIn" data-wow-delay="0.4s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/refractory-funnel.png" class="product-img wow fadeIn" data-wow-delay="0.6s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/roof-set-bricks.png" class="product-img wow fadeIn" data-wow-delay="0.8s">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/rotatory-klin-bricks.png" class="product-img wow fadeIn" data-wow-delay="0.2s">
-                    </div>
-                    <div class="col-sm-12 col-md-3 col-lg-3" style="padding : 24px">
-                        <img src="assets/img/products/well-blocks.png" class="product-img wow fadeIn" data-wow-delay="0.4s">
-                    </div>
-                </div>
-
-
-            </div>
-
-                <!-- footer section -->
-            <div class="footer-section section">
-                <div class="row" style="padding : 48px 16px 16px 16px">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        About:<br> <br>
-                        Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-                        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-                        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-                        casting industry @1500 MT per year<br> <br>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Quick Links:<br> <br>
-                        <ul>
-                            <li><a class="customLink" style="color: white" href="index.html">Home</a></li>
-                            <li><a class="customLink" style="color: white" href="about.html">About</a></li>
-                            <li><a class="customLink" style="color: white" href="products.html">Products</a></li>
-                            <li><a class="customLink" style="color : white" href="gallery.html">Photo Gallery</a></li>
-                            <li><a class="customLink" style="color: white" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Reach Us:<br> <br>
-                        Golden Ceramic Works (P) Ltd.,<br>
-                        Nehru Road, Chirkunda,<br>
-                        Dhanbad, Jharkhand - 828202<br><br>
-
-                        <img src="assets/img/icons/phone.svg" width="16px" style="margin-top: -3px; margin-right: 4px">06540-272039<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@rediffmail.com<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@bsnl.in
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-footer">
-                <center>
-                    © Golden Ceramic Works (P) Ltd., Chirkunda, Dhanbad, Jharkhand
-                </center>
-            </div>
-
+        <div class="product-card animate delay-1" data-category="shaped bricks">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/ha-bricks.png" alt="High Alumina Bricks" />
+          </div>
+          <div class="product-info">
+            <h3>High Alumina Bricks</h3>
+            <p>Available in 45–80% Al₂O₃ grades for extreme temperature applications in furnaces and kilns.</p>
+            <ul class="specs-list">
+              <li>Al₂O₃: 45–80%</li>
+              <li>Superior hot strength</li>
+            </ul>
+          </div>
         </div>
 
+        <div class="product-card animate delay-2" data-category="shaped bricks">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/foundry-brick.png" alt="Foundry Bricks" />
+          </div>
+          <div class="product-info">
+            <h3>Foundry Bricks</h3>
+            <p>30–45% alumina content bricks suited for foundry and lower-temperature lining applications.</p>
+            <ul class="specs-list">
+              <li>Al₂O₃: 30–45%</li>
+              <li>Excellent slag resistance</li>
+            </ul>
+          </div>
+        </div>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="assets/js/myJs.js"></script>
-    </body>
+        <div class="product-card animate" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/pouring-set.png" alt="Pouring Sets" />
+          </div>
+          <div class="product-info">
+            <h3>Pouring Sets</h3>
+            <p>Precision-engineered pouring sets for consistent, reliable steel casting performance.</p>
+            <ul class="specs-list">
+              <li>Precise bore geometry</li>
+              <li>Erosion resistant material</li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="product-card animate delay-1" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/burner-block.png" alt="Burner Blocks" />
+          </div>
+          <div class="product-info">
+            <h3>Burner Blocks</h3>
+            <p>Engineered for optimal thermal performance and durability in industrial kilns and furnaces.</p>
+            <ul class="specs-list">
+              <li>Custom bore configurations</li>
+              <li>High temperature rated</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-2" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/ha-nozzle.png" alt="HA Nozzles" />
+          </div>
+          <div class="product-info">
+            <h3>HA Nozzles</h3>
+            <p>High-alumina nozzles for precise control of steel flow during casting operations.</p>
+            <ul class="specs-list">
+              <li>High Al₂O₃ purity</li>
+              <li>Tight tolerances</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/bottom-block.png" alt="Bottom Blocks" />
+          </div>
+          <div class="product-info">
+            <h3>Bottom Blocks</h3>
+            <p>Used in ladle and tundish bottoms, designed for consistent drainage and long service life.</p>
+            <ul class="specs-list">
+              <li>Anti-oxidation treatment</li>
+              <li>Consistent density</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-1" data-category="shaped bricks">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/coke-oven-brick.png" alt="Coke Oven Bricks" />
+          </div>
+          <div class="product-info">
+            <h3>Coke Oven Bricks</h3>
+            <p>Specialised bricks formulated for the demanding thermal and chemical environment of coke ovens.</p>
+            <ul class="specs-list">
+              <li>Low thermal expansion</li>
+              <li>High abrasion resistance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-2" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/laddle-sleeves.png" alt="Ladle Sleeves" />
+          </div>
+          <div class="product-info">
+            <h3>Ladle Sleeves</h3>
+            <p>Refractory sleeves for ladle shroud applications, ensuring smooth and controlled metal flow.</p>
+            <ul class="specs-list">
+              <li>Thermal shock resistant</li>
+              <li>Long service life</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/refractory-funnel.png" alt="Refractory Funnels" />
+          </div>
+          <div class="product-info">
+            <h3>Refractory Funnels</h3>
+            <p>Engineered for ingot casting operations, providing smooth and efficient metal flow.</p>
+            <ul class="specs-list">
+              <li>Smooth bore finish</li>
+              <li>High volume throughput</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-1" data-category="shaped specials">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/well-blocks.png" alt="Well Blocks" />
+          </div>
+          <div class="product-info">
+            <h3>Well Blocks</h3>
+            <p>High-performance blocks for ladle drainage applications requiring minimal porosity and maximum density.</p>
+            <ul class="specs-list">
+              <li>High density body</li>
+              <li>Minimal porosity</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-2" data-category="shaped bricks">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/rotatory-klin-bricks.png" alt="Rotary Kiln Bricks" />
+          </div>
+          <div class="product-info">
+            <h3>Rotary Kiln Bricks</h3>
+            <p>Durable refractory bricks for cement and lime rotary kilns, engineered for low spalling.</p>
+            <ul class="specs-list">
+              <li>High spalling resistance</li>
+              <li>Low porosity</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate" data-category="unshaped">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/fireclay-mortar.png" alt="Fireclay Mortar" />
+          </div>
+          <div class="product-info">
+            <h3>Fireclay Mortar</h3>
+            <p>High-bond bonding mortar for refractory lining installations requiring tight, durable joints.</p>
+            <ul class="specs-list">
+              <li>Fine texture for tight joints</li>
+              <li>Excellent bond strength</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card animate delay-1" data-category="unshaped">
+          <div class="product-img">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/products/high-alumina-mortar.png" alt="High Alumina Mortar" />
+          </div>
+          <div class="product-info">
+            <h3>High Alumina Mortar</h3>
+            <p>Premium mortar for high-temperature masonry applications demanding superior thermal stability.</p>
+            <ul class="specs-list">
+              <li>Al₂O₃: 50%+</li>
+              <li>Resistant to thermal cycling</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Request Specifications -->
+      <div class="request-specs animate">
+        <h3>Need Technical Specifications?</h3>
+        <p>Request detailed data sheets, chemical compositions, and dimensional tolerances for any of our products. Our team is ready to assist with your specific requirements.</p>
+        <div class="actions">
+          <a href="contact.html" class="btn btn-primary">Request Specifications</a>
+          <a href="contact.html" class="btn btn-outline-dark">Send an Enquiry</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--gold-light)">Get in Touch</div>
+      <h2>Ready to Source Quality Refractories?</h2>
+      <p>Contact our team for bulk enquiries, custom product requirements, or to request samples.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Send an Enquiry</a>
+        <a href="tel:06540272039" class="btn btn-outline">
+          <svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+          06540-272039
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Golden Ceramic Works" onerror="this.style.display='none'" />
+          <p>One of India's leading manufacturers of refractory materials for the steel casting and foundry industries. Trusted since 1984.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Roof Set Bricks</a></li>
+            <li><a href="products.html">HA Bricks</a></li>
+            <li><a href="products.html">Pouring Sets</a></li>
+            <li><a href="products.html">Burner Blocks</a></li>
+            <li><a href="products.html">HA Nozzles</a></li>
+            <li><a href="products.html">Fireclay Mortar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nehru Road, Chirkunda,<br/>Dhanbad, Jharkhand – 828202
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+              06540-272039
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              dnb_golden@rediffmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Golden Ceramic Works (P) Ltd. All rights reserved.</span>
+        <span>Nehru Road, Chirkunda, Dhanbad, Jharkhand – 828202, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { if (window.scrollY > 40) navbar.classList.add('scrolled'); });
+    function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
+</body>
 </html>

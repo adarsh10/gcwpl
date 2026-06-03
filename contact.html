@@ -1,123 +1,469 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-        casting industry @1500 MT per year">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Golden Ceramic Works (P) Ltd.</title>
+  <meta name="description" content="Contact Golden Ceramic Works for refractory product enquiries, bulk orders, or technical specifications. Located in Chirkunda, Dhanbad, Jharkhand, India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-info-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+    .contact-info-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .contact-info-card h3 svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-info-card p,
+    .contact-info-card a {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.65;
+      text-decoration: none;
+    }
+    .contact-info-card a:hover {
+      color: var(--gold-dark);
+    }
+    .directions-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      color: var(--gold-dark) !important;
+      font-size: .85rem;
+      font-weight: 500;
+      margin-top: .6rem;
+    }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .35rem .75rem;
+      font-size: .88rem;
+    }
+    .hours-grid .day { color: var(--text); font-weight: 500; }
+    .hours-grid .time { color: var(--muted); }
 
-        <meta name="keywords" content="golden, ceramic, works, pvt, ltd, jharkhand, refractories, chirkunda,
-        fire bricks, gcw, gcwpl, golden ceramic works pvt ltd, golden ceramic, india, jharkhand, best refractory,
-        best refractory in jharkhand, dhanbad, gcwpl chirkunda, gcwpl dhanbad">
-        <meta name="author" content="Golden Ceramic Works (P) Ltd.">
-        <meta name="theme-color" content="#3d0000">
+    /* Contact Form */
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+    }
+    .contact-form-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: .4rem;
+    }
+    .contact-form-card .sub {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 1.75rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .65rem .9rem;
+      font-size: .92rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(202,138,4,0.12);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-submit {
+      width: 100%;
+      margin-top: .5rem;
+    }
+    .success-msg {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      color: #166534;
+      font-size: .92rem;
+      margin-top: 1rem;
+      align-items: center;
+      gap: .6rem;
+    }
+    .success-msg.show {
+      display: flex;
+    }
 
-        <title>Get in Touch -- Golden Ceramic Works Pvt Ltd. - Best refractory in Jharkhand!</title>
+    /* Map */
+    .map-section {
+      margin-top: 5rem;
+    }
+    .map-section h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: none;
+    }
 
-        <link rel="icon" href="assets/img/favicon.ico">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
 
-        <link href="assets/css/myStyle.css" rel="stylesheet">
-        <link href="assets/css/animate.css" rel="stylesheet">
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script>
-            new WOW().init();
-        </script>
-        <link href="https://fonts.googleapis.com/css?family=Rambla" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
-    </head>
+  <div class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="products.html" onclick="closeMobileNav()">Products</a>
+    <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+  </div>
 
-    <body>
-        <div class="loader">
-            <img src="assets/img/logo.png" width="260px" class="img-responsive projectGrid" alt=""> <br>
-            <img src="assets/img/loader.svg" class="img-responsive projectGrid" alt="">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span><span>Contact</span>
+      </div>
+      <h1>Get In Touch</h1>
+      <p>Reach out for product enquiries, bulk orders, or technical specifications.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info animate">
+
+          <div class="contact-info-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Our Address
+            </h3>
+            <p>
+              Golden Ceramic Works (P) Ltd.<br/>
+              Nehru Road, Chirkunda,<br/>
+              Dhanbad, Jharkhand – 828202<br/>
+              India
+            </p>
+            <a href="https://maps.app.goo.gl/oL2bUjpnSpx82aJHA" target="_blank" rel="noopener" class="directions-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+
+          <div class="contact-info-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+              Phone
+            </h3>
+            <a href="tel:06540272039">06540-272039</a>
+          </div>
+
+          <div class="contact-info-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </h3>
+            <a href="mailto:dnb_golden@rediffmail.com">dnb_golden@rediffmail.com</a><br/>
+            <a href="mailto:dnb_golden@bsnl.in" style="margin-top:.25rem;display:inline-block">dnb_golden@bsnl.in</a>
+          </div>
+
+          <div class="contact-info-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Business Hours
+            </h3>
+            <div class="hours-grid">
+              <span class="day">Monday – Friday</span>
+              <span class="time">9:00 AM – 6:00 PM</span>
+              <span class="day">Saturday</span>
+              <span class="time">9:00 AM – 2:00 PM</span>
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="custom-body" style="background: linear-gradient(45deg, rgba(165, 14, 20, 0.89), rgba(0, 0, 0, 0.8)) repeat;">
-                <!-- navbar starts -->
-            <nav class="navbar navbar-toggleable-md navbar-light white" style="background: white">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" width="240" alt="">
-                </a>
-                <div class="collapse navbar-collapse" style="float : right" id="navbarText">
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
+        <!-- Contact Form -->
+        <div class="contact-form-card animate delay-1">
+          <h2>Send Us an Enquiry</h2>
+          <p class="sub">Fill in the form below and our team will respond within one business day.</p>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <center>
-                <form id="contact" action="https://getform.io/f/75cebda2-0d23-48ef-b27a-25dc0d36f06f" method="POST" style="max-width: 400px">
-                    <h3>Get in Touch!</h3>
-                    <h4>Fill the contact form and we will get back to you!</h4>
-                    <fieldset>
-                        <input placeholder="Your name" name="name" type="text" tabindex="1" required autofocus>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="Your Mobile Number" name="mobile" type="tel" tabindex="3" required>
-                    </fieldset>
-                    <fieldset>
-                        <textarea placeholder="Type your message here...." name="message" tabindex="5" required></textarea>
-                    </fieldset>
-                    <fieldset>
-                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                    </fieldset>
-                </form>
-
-                <div style="color: white; font-size: 24px">
-                    -- OR --
-                </div>
-                <div style="margin-top: 24px; color: white">
-                    Contact us directly at:<br>
-
-                    <div style="margin-top: 24px; margin-bottom: 48px">
-                        <img src="assets/img/icons/phone.svg" width="16px" style="margin-top: -3px; margin-right: 4px">06540-272039<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@rediffmail.com<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@bsnl.in
-                    </div>
-                </div>
-            </center>
-
-            <!-- footer section -->
-            <div class="bottom-footer">
-                <center>
-                    © Golden Ceramic Works (P) Ltd., Chirkunda, Dhanbad, Jharkhand
-                </center>
+          <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span style="color:var(--gold)">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span style="color:var(--gold)">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+              </div>
             </div>
 
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span style="color:var(--gold)">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company / Organisation</label>
+              <input type="text" id="company" name="company" placeholder="Your company name" />
+            </div>
+
+            <div class="form-group">
+              <label for="product">Product of Interest</label>
+              <select id="product" name="product">
+                <option value="" disabled selected>Select a product...</option>
+                <option value="Roof Set Bricks">Roof Set Bricks</option>
+                <option value="High Alumina Bricks">High Alumina Bricks</option>
+                <option value="Foundry Bricks">Foundry Bricks</option>
+                <option value="Pouring Sets">Pouring Sets</option>
+                <option value="Burner Blocks">Burner Blocks</option>
+                <option value="HA Nozzles">HA Nozzles</option>
+                <option value="Bottom Blocks">Bottom Blocks</option>
+                <option value="Coke Oven Bricks">Coke Oven Bricks</option>
+                <option value="Ladle Sleeves">Ladle Sleeves</option>
+                <option value="Refractory Funnels">Refractory Funnels</option>
+                <option value="Well Blocks">Well Blocks</option>
+                <option value="Rotary Kiln Bricks">Rotary Kiln Bricks</option>
+                <option value="Fireclay Mortar">Fireclay Mortar</option>
+                <option value="High Alumina Mortar">High Alumina Mortar</option>
+                <option value="Other/Multiple">Other / Multiple Products</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span style="color:var(--gold)">*</span></label>
+              <textarea id="message" name="message" placeholder="Describe your requirements, quantity needed, or any questions you have..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send Enquiry</button>
+
+            <div class="success-msg" id="successMsg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Thank you! Your enquiry has been sent. We'll be in touch within one business day.
+            </div>
+          </form>
         </div>
 
+      </div>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="assets/js/myJs.js"></script>
-    </body>
+      <!-- Map -->
+      <div class="map-section animate">
+        <div style="text-align:center;margin-bottom:2rem">
+          <div class="section-label">Find Us</div>
+          <h2 class="section-title">Our Location</h2>
+          <div class="divider divider-center"></div>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.0!2d86.7!3d23.77"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Golden Ceramic Works location map"
+          ></iframe>
+        </div>
+        <div style="text-align:center;margin-top:1.25rem">
+          <a href="https://maps.app.goo.gl/oL2bUjpnSpx82aJHA" target="_blank" rel="noopener" class="btn btn-outline-dark">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
 
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--gold-light)">Ready to Order?</div>
+      <h2>Looking for a Refractory Partner?</h2>
+      <p>We supply steel plants and foundries across India and internationally. Let's talk about your requirements.</p>
+      <div class="cta-actions">
+        <a href="tel:06540272039" class="btn btn-primary">
+          <svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+          Call 06540-272039
+        </a>
+        <a href="products.html" class="btn btn-outline">View Products</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Golden Ceramic Works" onerror="this.style.display='none'" />
+          <p>One of India's leading manufacturers of refractory materials for the steel casting and foundry industries. Trusted since 1984.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Roof Set Bricks</a></li>
+            <li><a href="products.html">HA Bricks</a></li>
+            <li><a href="products.html">Pouring Sets</a></li>
+            <li><a href="products.html">Burner Blocks</a></li>
+            <li><a href="products.html">HA Nozzles</a></li>
+            <li><a href="products.html">Fireclay Mortar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nehru Road, Chirkunda,<br/>Dhanbad, Jharkhand – 828202
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+              06540-272039
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              dnb_golden@rediffmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Golden Ceramic Works (P) Ltd. All rights reserved.</span>
+        <span>Nehru Road, Chirkunda, Dhanbad, Jharkhand – 828202, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { if (window.scrollY > 40) navbar.classList.add('scrolled'); });
+    function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!firstName || !lastName || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      setTimeout(() => {
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = 'Send Enquiry';
+        const msg = document.getElementById('successMsg');
+        msg.classList.add('show');
+        setTimeout(() => msg.classList.remove('show'), 6000);
+      }, 900);
+    }
+  </script>
+</body>
 </html>

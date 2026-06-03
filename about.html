@@ -1,216 +1,324 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-        casting industry @1500 MT per year">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Golden Ceramic Works (P) Ltd.</title>
+  <meta name="description" content="Learn about Golden Ceramic Works — our history since 1984, management team, manufacturing capabilities, and our commitment to quality refractory solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .capacity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .capacity-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .capacity-card .big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .capacity-card p { font-size: .88rem; color: var(--muted); }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .mission-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      border: 1px solid var(--border);
+    }
+    .mission-card h3 { margin-bottom: .75rem; }
+    .mission-card p { color: var(--muted); font-size: .95rem; }
+    @media (max-width: 768px) {
+      .capacity-grid { grid-template-columns: 1fr 1fr; }
+      .mission-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .capacity-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
 
-        <meta name="keywords" content="golden, ceramic, works, pvt, ltd, jharkhand, refractories, chirkunda,
-        fire bricks, gcw, gcwpl, golden ceramic works pvt ltd, golden ceramic, india, jharkhand, best refractory,
-        best refractory in jharkhand, dhanbad, gcwpl chirkunda, gcwpl dhanbad">
-        <meta name="author" content="Golden Ceramic Works (P) Ltd.">
-        <meta name="theme-color" content="#3d0000">
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-        <title>About Us -- Golden Ceramic Works Pvt Ltd. - Best refractory in Jharkhand!</title>
-        <link rel="icon" href="assets/img/favicon.ico">
+  <div class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="products.html" onclick="closeMobileNav()">Products</a>
+    <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+  </div>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span><span>About Us</span>
+      </div>
+      <h1>Our Story</h1>
+      <p>Four decades of refractory excellence, built on quality and trust.</p>
+    </div>
+  </div>
 
-        <link href="assets/css/myStyle.css" rel="stylesheet">
-        <link href="assets/css/animate.css" rel="stylesheet">
-
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-        <script>
-            new WOW().init();
-        </script>
-        <link href="https://fonts.googleapis.com/css?family=Rambla" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
-    </head>
-
-    <body>
-        <div class="loader">
-            <img src="assets/img/logo.png" width="260px" class="img-responsive projectGrid" alt=""> <br>
-            <img src="assets/img/loader.svg" class="img-responsive projectGrid" alt="">
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content animate">
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">A Legacy of Industrial Excellence</h2>
+          <div class="divider"></div>
+          <p style="color:var(--muted);margin-bottom:1.25rem">Golden Ceramic Works (P) Ltd. is one of the leading suppliers of refractories to the steel casting and foundry industries. Incorporated in 1984 with its foundations laid in 1981 by Late Ram Chandra Prasad, the company began manufacturing operations in 1992.</p>
+          <p style="color:var(--muted);margin-bottom:1.75rem">Starting with an initial capacity of 1,500 MT of Roof Set Bricks for Electric Arc Furnaces and Ladle Refining Furnaces, the company has grown to a current capacity of 15,000 MT per annum. Our products are manufactured under closed surveillance by a team of experienced engineers, with rigorous laboratory testing at every stage.</p>
+          <ul class="about-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Supplying steel plants and foundries across India</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Exporting to Far East and Middle East regions</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full range of shaped and unshaped refractories</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Automated tunnel kilns + traditional Down Draft Kilns</li>
+          </ul>
         </div>
-
-        <div class="custom-body">
-                <!-- navbar starts -->
-            <nav class="navbar navbar-toggleable-md navbar-light white">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" width="240" alt="">
-                </a>
-                <div class="collapse navbar-collapse" style="float : right" id="navbarText">
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-                <!-- Product section -->
-            <div class="product-section section">
-                <center>
-                    Our Founder
-                    <div class="custom-dash"></div>
-
-                    <br>
-                    <img src="assets/img/dadaji.png" width="240px">
-                    <br>
-                    <br>
-                    Late Ram Chandra Prasad<br><span style="font-size: 12px">
-                        (5th April 1936 - 4th March 2016)</span>
-
-                    <div style="margin-top: 48px"></div>
-                    Our Team
-                    <div class="custom-dash"></div>
-
-                    <div class="row" style="padding : 48px 16px 16px 16px">
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <img src="assets/img/a_k_shah.png" width="240px">
-                            <br>Mr. Arbind Kumar Shah<br>
-                            <span style="font-size: 12px">Managing Director</span>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <img src="assets/img/p_k_shah.png" width="240px">
-                            <br>Mr. Pawan Kumar Shah<br>
-                            <span style="font-size: 12px">Director</span>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <img src="assets/img/b_k_shah.png" width="240px">
-                            <br>Mr. Babul Kumar Shah<br>
-                            <span style="font-size: 12px">Director</span>
-                        </div>
-                    </div>
-                </center>
-
-                <div style="margin-top: 48px"></div>
-                About GCWPL
-                <div class="custom-dash"></div><br>
-
-                <span>
-                    The foundation stone of Golden Ceramic Works (P) Ltd. was laid down by late Ram Chandra Prasad
-                    in the year 1981 which was incorporated into a company in 1984. This manufacturing unit
-                    has been setup in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-                    started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-                    casting industry @1500 MT per year.<br><br>
-
-                    Today the plant has a total capacity of 10000 MT of Shaped refractory and 5000 MT of Unshaped
-                    refractory per year. <br><br>
-
-                    We are currently one of the leading suppliers of refractories to the Steel casting and foundry Industries.
-                    The plant is modern and supported by a team of qualified professionals. The plant's existing capacity
-                    is 15000 MT per annum. We cater to various Steel plants and steel foundries all over India and exports
-                    are made to various countries in the far East and Middle East.
-                    <br><br>
-
-                    The company manufactures complete range of
-                    refractories including:
-
-                    <ul>
-                        <li>
-                            Roofs Set Bricks for Electric Arc Furnace and Ladel Refining Furnace.
-                        </li>
-                        <li>
-                            Fireclay bricks in medium & high heat duty in all shapes and sizes with Alumina contents from
-                            30 to 45%.
-                        </li>
-                        <li>
-                            High Grog and high Alumina refractories with Alumina contents from 45% to 80% for various
-                            application in Steel plants, Cement Kilns/sponge Iron and Power Plants.
-                        </li>
-                        <li>
-                            Insulation bricks in conventional and special light weight bricks.
-                        </li>
-                    </ul>
-
-                    <br><br>
-                    Quality
-                    <div class="custom-dash"></div><br>
-
-                    Our products are manufactured under closed surveillance by a team of experienced
-                    engineers and laboratory test as per the requirement of our consumer. We have a well
-                    equipped laboratory, which functions under the guidance of our director - Mr. Pawan Kumar
-                    Shah.
-
-                    <br><br>
-                    At present, our products are fired in state-of-the-art tunnel kiln, which is automatically
-                    controlled for better results. However, some of the products are also fired in traditional
-                    Down Draft Kiln for better results.
-                    <br><br>
-
-                </span>
-            </div>
-
-                <!-- footer section -->
-            <div class="footer-section section">
-                <div class="row" style="padding : 48px 16px 16px 16px">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        About:<br> <br>
-                        Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-                        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-                        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-                        casting industry @1500 MT per year<br> <br>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Quick Links:<br> <br>
-                        <ul>
-                            <li><a class="customLink" style="color: white" href="">Home</a></li>
-                            <li><a class="customLink" style="color: white" href="about">About</a></li>
-                            <li><a class="customLink" style="color: white" href="products">Products</a></li>
-                            <li><a class="customLink" style="color : white" href="gallery">Photo Gallery</a></li>
-                            <li><a class="customLink" style="color: white" href="contact">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Reach Us:<br> <br>
-                        Golden Ceramic Works (P) Ltd.,<br>
-                        Nehru Road, Chirkunda,<br>
-                        Dhanbad, Jharkhand - 828202<br><br>
-
-                        <img src="assets/img/icons/phone.svg" width="16px" style="margin-top: -3px; margin-right: 4px">06540-272039<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@rediffmail.com<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top: -3px; margin-right: 4px">dnb_golden@bsnl.in
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-footer">
-                <center>
-                    © Golden Ceramic Works (P) Ltd., Chirkunda, Dhanbad, Jharkhand
-                </center>
-            </div>
-
+        <div class="about-images animate delay-1">
+          <img class="about-img-main" src="https://adarsh10.github.io/gcwpl/assets/img/site/img4.jpg" alt="Golden Ceramic Works facility" />
+          <img class="about-img-inset" src="https://adarsh10.github.io/gcwpl/assets/img/site/img8.jpg" alt="Manufacturing process" />
+          <div class="about-badge"><strong>1984</strong><span>Year<br/>Founded</span></div>
         </div>
+      </div>
+      <div class="capacity-grid">
+        <div class="capacity-card animate"><div class="big">15,000 MT</div><p>Total Annual Production Capacity</p></div>
+        <div class="capacity-card animate delay-1"><div class="big">10,000 MT</div><p>Shaped Refractory per Year</p></div>
+        <div class="capacity-card animate delay-2"><div class="big">5,000 MT</div><p>Unshaped Refractory per Year</p></div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section section-alt">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start" class="about-grid">
+        <div class="animate">
+          <div class="section-label">Our Journey</div>
+          <h2 class="section-title">Milestones That Shaped Us</h2>
+          <div class="divider"></div>
+          <div class="timeline" style="margin-top:2rem">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-year">1981</span>
+              <h4>Foundation Laid</h4>
+              <p>Company founded by Late Ram Chandra Prasad in Chirkunda, Dhanbad, Jharkhand.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-year">1984</span>
+              <h4>Formally Incorporated</h4>
+              <p>Golden Ceramic Works formally registered as a private limited company.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-year">1992</span>
+              <h4>Manufacturing Begins</h4>
+              <p>Production of Roof Set Bricks for Electric Arc Furnaces commences at 1,500 MT annually.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-year">2000s</span>
+              <h4>Capacity Expansion</h4>
+              <p>Significant expansion of kiln infrastructure and product range including High Alumina and Fireclay products.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <span class="timeline-year">Present</span>
+              <h4>15,000 MT Capacity</h4>
+              <p>Serving 50+ clients across India and exports to the Far East and Middle East with a 70+ strong workforce.</p>
+            </div>
+          </div>
+        </div>
+        <div class="animate delay-1">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img11.jpg" alt="Factory view" style="width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);margin-bottom:1.5rem" onerror="this.src='https://adarsh10.github.io/gcwpl/assets/img/site/img12.jpg'" />
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img13.jpg" alt="Products" style="width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)" onerror="this.src='https://adarsh10.github.io/gcwpl/assets/img/site/img14.jpg'" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="assets/js/myJs.js"></script>
-    </body>
+  <!-- Management Team -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="section-label">Leadership</div>
+        <h2 class="section-title">Our Management Team</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto">Guided by experienced directors committed to quality, innovation, and sustainable growth.</p>
+      </div>
 
+      <!-- Founder -->
+      <div style="display:flex;justify-content:center;margin-bottom:3rem">
+        <div class="team-card animate" style="max-width:320px;width:100%">
+          <div class="team-photo">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/dadaji.png" alt="Late Ram Chandra Prasad" />
+          </div>
+          <h3>Late Ram Chandra Prasad</h3>
+          <div class="role">Founder</div>
+          <p style="margin-top:.75rem;color:var(--muted);font-size:.9rem">Laid the foundation of Golden Ceramic Works in 1981. His vision and dedication built the legacy that continues to this day.</p>
+          <p style="margin-top:.4rem;color:var(--muted);font-size:.8rem;opacity:.7">April 5, 1936 – March 4, 2016</p>
+        </div>
+      </div>
+
+      <!-- Directors -->
+      <div class="team-grid">
+        <div class="team-card animate">
+          <div class="team-photo">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/a_k_shah.png" alt="Arbind Kumar Shah" />
+          </div>
+          <h3>Arbind Kumar Shah</h3>
+          <div class="role">Managing Director</div>
+          <p style="margin-top:.75rem;color:var(--muted);font-size:.9rem">Leads the company's overall operations, strategy, and business development efforts across domestic and international markets.</p>
+        </div>
+        <div class="team-card animate delay-1">
+          <div class="team-photo">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/p_k_shah.png" alt="Pawan Kumar Shah" />
+          </div>
+          <h3>Pawan Kumar Shah</h3>
+          <div class="role">Director — Quality &amp; Laboratory</div>
+          <p style="margin-top:.75rem;color:var(--muted);font-size:.9rem">Oversees the in-house laboratory, quality assurance processes, and ensures every product meets strict technical specifications.</p>
+        </div>
+        <div class="team-card animate delay-2">
+          <div class="team-photo">
+            <img src="https://adarsh10.github.io/gcwpl/assets/img/b_k_shah.png" alt="Babul Kumar Shah" />
+          </div>
+          <h3>Babul Kumar Shah</h3>
+          <div class="role">Director</div>
+          <p style="margin-top:.75rem;color:var(--muted);font-size:.9rem">Contributes to production management, supply chain coordination, and maintaining operational excellence across facilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="section-label">Purpose</div>
+        <h2 class="section-title">Mission &amp; Values</h2>
+        <div class="divider divider-center"></div>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-card animate">
+          <div class="feature-icon" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" style="color:var(--gold-dark)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <h3>Our Mission</h3>
+          <p>To manufacture and deliver world-class refractory products that enable our clients to achieve maximum efficiency, safety, and longevity in their steel casting and foundry operations.</p>
+        </div>
+        <div class="mission-card animate delay-1">
+          <div class="feature-icon" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" style="color:var(--gold-dark)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Our Vision</h3>
+          <p>To be the most trusted name in refractory manufacturing in India, recognised globally for innovation, quality, and our contribution to the advancement of the steel industry.</p>
+        </div>
+        <div class="mission-card animate">
+          <div class="feature-icon" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" style="color:var(--gold-dark)"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+          <h3>Quality First</h3>
+          <p>Every batch of product is tested in our in-house laboratory. Our experienced engineers ensure that all dimensions, chemistry, and thermal properties meet or exceed industry standards.</p>
+        </div>
+        <div class="mission-card animate delay-1">
+          <div class="feature-icon" style="margin-bottom:1.25rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" style="color:var(--gold-dark)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>People &amp; Community</h3>
+          <p>With 70+ employees and deep roots in Chirkunda, we are committed to the well-being of our team and the economic development of our local community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--gold-light)">Work With Us</div>
+      <h2>Partner with a Trusted Refractory Manufacturer</h2>
+      <p>Reach out to discuss your requirements or request product specifications and samples.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+        <a href="products.html" class="btn btn-outline">View Products</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Golden Ceramic Works" onerror="this.style.display='none'" />
+          <p>One of India's leading manufacturers of refractory materials for the steel casting and foundry industries. Trusted since 1984.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Roof Set Bricks</a></li>
+            <li><a href="products.html">HA Bricks</a></li>
+            <li><a href="products.html">Pouring Sets</a></li>
+            <li><a href="products.html">Burner Blocks</a></li>
+            <li><a href="products.html">HA Nozzles</a></li>
+            <li><a href="products.html">Fireclay Mortar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nehru Road, Chirkunda,<br/>Dhanbad, Jharkhand – 828202</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>06540-272039</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>dnb_golden@rediffmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Golden Ceramic Works (P) Ltd. All rights reserved.</span>
+        <span>Nehru Road, Chirkunda, Dhanbad, Jharkhand – 828202, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { if (window.scrollY > 40) navbar.classList.add('scrolled'); });
+    function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+  </script>
+</body>
 </html>

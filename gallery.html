@@ -1,275 +1,453 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-        casting industry @1500 MT per year">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Golden Ceramic Works (P) Ltd.</title>
+  <meta name="description" content="View photos of Golden Ceramic Works' manufacturing facility, kiln operations, products, and workforce in Dhanbad, Jharkhand." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform .4s ease;
+    }
+    .masonry-item:hover img {
+      transform: scale(1.04);
+    }
+    .masonry-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .3s ease;
+    }
+    .masonry-item:hover .masonry-overlay {
+      background: rgba(0,0,0,0.38);
+    }
+    .masonry-overlay svg {
+      color: #fff;
+      opacity: 0;
+      transform: scale(.8);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    .masonry-item:hover .masonry-overlay svg {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-        <meta name="keywords" content="golden, ceramic, works, pvt, ltd, jharkhand, refractories, chirkunda,
-        fire bricks, gcw, gcwpl, golden ceramic works pvt ltd, golden ceramic, india, jharkhand, best refractory,
-        best refractory in jharkhand, dhanbad, gcwpl chirkunda, gcwpl dhanbad">
-        <meta name="author" content="Golden Ceramic Works (P) Ltd.">
-        <meta name="theme-color" content="#3d0000">
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-inner img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: var(--radius);
+      object-fit: contain;
+      box-shadow: 0 25px 60px rgba(0,0,0,.6);
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      z-index: 10000;
+      background: rgba(255,255,255,.12);
+      border: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.25); }
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,.12);
+      border: none;
+      color: #fff;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10000;
+      transition: background .2s;
+    }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,.28); }
+    .lightbox-prev { left: 1.25rem; }
+    .lightbox-next { right: 1.25rem; }
+    .lightbox-counter {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.7);
+      font-size: .85rem;
+      background: rgba(0,0,0,.4);
+      padding: .3rem .85rem;
+      border-radius: 99px;
+    }
 
-        <title>Photo Gallery -- Golden Ceramic Works Pvt Ltd. - Best refractory in Jharkhand!</title>
-        <link rel="icon" href="assets/img/favicon.ico">
+    @media (max-width: 900px) {
+      .masonry-grid { columns: 2; }
+    }
+    @media (max-width: 540px) {
+      .masonry-grid { columns: 1; }
+      .lightbox-prev { left: .5rem; }
+      .lightbox-next { right: .5rem; }
+    }
+  </style>
+</head>
+<body>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Logo" onerror="this.style.display='none'" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-        <link href="assets/css/myStyle.css" rel="stylesheet">
-        <link href="assets/css/simplelightbox.min.css" rel="stylesheet">
-        <link href="assets/css/animate.css" rel="stylesheet">
+  <div class="mobile-nav" id="mobileNav">
+    <span class="mobile-nav-close" onclick="closeMobileNav()">✕</span>
+    <a href="index.html" onclick="closeMobileNav()">Home</a>
+    <a href="about.html" onclick="closeMobileNav()">About</a>
+    <a href="products.html" onclick="closeMobileNav()">Products</a>
+    <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+    <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    <a href="contact.html" class="btn btn-primary" onclick="closeMobileNav()">Enquire Now</a>
+  </div>
 
-        <link href="https://fonts.googleapis.com/css?family=Rambla" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a><span>›</span><span>Gallery</span>
+      </div>
+      <h1>Our Facility &amp; Work</h1>
+      <p>A visual look at our manufacturing plant, kiln operations, and refractory products.</p>
+    </div>
+  </div>
 
-    </head>
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem" class="animate">
+        <div class="section-label">Photo Gallery</div>
+        <h2 class="section-title">Inside Golden Ceramic Works</h2>
+        <div class="divider divider-center"></div>
+        <p class="section-subtitle" style="margin:0 auto">Explore our state-of-the-art facility in Chirkunda, Dhanbad — from the tunnel kilns to the finished refractory products.</p>
+      </div>
 
-    <body>
-        <div class="loader">
-            <img src="assets/img/logo.png" width="260px" class="img-responsive projectGrid" alt=""> <br>
-            <img src="assets/img/loader.svg" class="img-responsive projectGrid" alt="">
+      <div class="masonry-grid">
+        <div class="masonry-item" onclick="openLightbox(0)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img1.jpg" alt="Golden Ceramic Works – Photo 1" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
         </div>
-
-        <div class="custom-body">
-                <!-- navbar starts -->
-            <nav class="navbar navbar-toggleable-md navbar-light white">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="assets/img/logo.png" width="240" alt="">
-                </a>
-                <div class="collapse navbar-collapse" style="float : right" id="navbarText">
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="products.html">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-                <!-- Product section -->
-            <div class="gallery-section section">
-                <center>
-                    Photo Gallery
-                    <div class="custom-dash"></div>
-
-                    <div class="gallery">
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img1.jpg"><img src="assets/img/site/img1.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img2.jpg"><img src="assets/img/site/img2.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img3.jpg"><img src="assets/img/site/img3.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img4.jpg"><img src="assets/img/site/img4.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img01.jpg"><img src="assets/img/site/img01.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img02.jpg"><img src="assets/img/site/img02.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img03.jpg"><img src="assets/img/site/img03.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img04.jpg"><img src="assets/img/site/img04_thumb.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img5.jpg"><img src="assets/img/site/img5.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img6.jpg"><img src="assets/img/site/img6.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img7.jpg"><img src="assets/img/site/img7.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img8.jpg"><img src="assets/img/site/img9.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img9.jpg"><img src="assets/img/site/img10.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img10.jpg"><img src="assets/img/site/img11.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img11.jpg"><img src="assets/img/site/img12.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img12.jpg"><img src="assets/img/site/img13.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img13.jpg"><img src="assets/img/site/img14.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img14.jpg"><img src="assets/img/site/img15.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img15.jpg"><img src="assets/img/site/img16.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img16.jpg"><img src="assets/img/site/img17.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                        <div class="row" style="padding : 48px 16px 16px 16px">
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img17.jpg"><img src="assets/img/site/img18.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img18.jpg"><img src="assets/img/site/img19.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img19.jpg"><img src="assets/img/site/img20.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                            <div class="col-sm-12 col-md-3 col-lg-3">
-                                <a href="assets/img/site/img20.jpg"><img src="assets/img/site/img21.jpg" alt="" style="max-width: 100%" /></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </center>
-            </div>
-
-                <!-- footer section -->
-            <div class="footer-section section">
-                <div class="row" style="padding : 48px 16px 16px 16px">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        About:<br> <br>
-                        Golden Ceramic Works (P) Ltd. was established in the year 1984 with setting up it's
-                        manufacturing unit in Chirkunda, district Dhanbad, Jharkhand, India. In 1992, we
-                        started manufacturing Roof Set bricks for EAF and LRF, specially for foundry &
-                        casting industry @@1500 MT per year<br> <br>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Quick Links:<br> <br>
-                        <ul>
-                            <li><a class="customLink" style="color : white" href="">Home</a></li>
-                            <li><a class="customLink" style="color : white" href="about">About</a></li>
-                            <li><a class="customLink" style="color : white" href="products">Products</a></li>
-                            <li><a class="customLink" style="color : white" href="gallery">Photo Gallery</a></li>
-                            <li><a class="customLink" style="color : white" href="contact">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        Reach Us:<br> <br>
-                        Golden Ceramic Works (P) Ltd.,<br>
-                        Nehru Road, Chirkunda,<br>
-                        Dhanbad, Jharkhand - 828202<br> <br>
-
-                        <img src="assets/img/icons/phone.svg" width="16px" style="margin-top : -3px ; margin-right : 4px">
-                        06540-272039<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top : -3px ; margin-right : 4px">
-                        dnb_golden@@rediffmail.com<br>
-                        <img src="assets/img/icons/email.svg" width="16px" style="margin-top : -3px ; margin-right : 4px">
-                        dnb_golden@@bsnl.in
-                    </div>
-                </div>
-            </div>
-            <div class="bottom-footer">
-                <center>
-                    © Golden Ceramic Works (P) Ltd., Chirkunda, Dhanbad, Jharkhand
-                </center>
-            </div>
-
+        <div class="masonry-item" onclick="openLightbox(1)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img2.jpg" alt="Golden Ceramic Works – Photo 2" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
         </div>
+        <div class="masonry-item" onclick="openLightbox(2)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img3.jpg" alt="Golden Ceramic Works – Photo 3" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(3)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img4.jpg" alt="Golden Ceramic Works – Photo 4" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(4)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img5.jpg" alt="Golden Ceramic Works – Photo 5" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(5)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img6.jpg" alt="Golden Ceramic Works – Photo 6" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(6)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img7.jpg" alt="Golden Ceramic Works – Photo 7" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(7)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img8.jpg" alt="Golden Ceramic Works – Photo 8" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(8)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img9.jpg" alt="Golden Ceramic Works – Photo 9" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(9)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img10.jpg" alt="Golden Ceramic Works – Photo 10" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(10)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img11.jpg" alt="Golden Ceramic Works – Photo 11" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(11)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img12.jpg" alt="Golden Ceramic Works – Photo 12" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(12)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img13.jpg" alt="Golden Ceramic Works – Photo 13" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(13)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img14.jpg" alt="Golden Ceramic Works – Photo 14" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(14)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img15.jpg" alt="Golden Ceramic Works – Photo 15" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(15)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img16.jpg" alt="Golden Ceramic Works – Photo 16" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(16)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img17.jpg" alt="Golden Ceramic Works – Photo 17" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(17)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img18.jpg" alt="Golden Ceramic Works – Photo 18" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(18)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img19.jpg" alt="Golden Ceramic Works – Photo 19" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(19)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img20.jpg" alt="Golden Ceramic Works – Photo 20" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+        <div class="masonry-item" onclick="openLightbox(20)">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/site/img21.jpg" alt="Golden Ceramic Works – Photo 21" loading="lazy" />
+          <div class="masonry-overlay">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="prevImage()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="Gallery image" />
+    </div>
+    <button class="lightbox-next" onclick="nextImage()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 21</div>
+  </div>
 
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-        <script src="assets/js/myJs.js"></script>
+  <section class="cta-banner">
+    <div class="container">
+      <div class="section-label" style="color:var(--gold-light)">Interested?</div>
+      <h2>Want to Know More About Our Facility?</h2>
+      <p>Get in touch to schedule a visit or to discuss your refractory requirements with our team.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        <a href="products.html" class="btn btn-outline">View Products</a>
+      </div>
+    </div>
+  </section>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="https://adarsh10.github.io/gcwpl/assets/img/logo.png" alt="Golden Ceramic Works" onerror="this.style.display='none'" />
+          <p>One of India's leading manufacturers of refractory materials for the steel casting and foundry industries. Trusted since 1984.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Roof Set Bricks</a></li>
+            <li><a href="products.html">HA Bricks</a></li>
+            <li><a href="products.html">Pouring Sets</a></li>
+            <li><a href="products.html">Burner Blocks</a></li>
+            <li><a href="products.html">HA Nozzles</a></li>
+            <li><a href="products.html">Fireclay Mortar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Nehru Road, Chirkunda,<br/>Dhanbad, Jharkhand – 828202
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 012 2.18 2 2 0 014 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+              06540-272039
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              dnb_golden@rediffmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Golden Ceramic Works (P) Ltd. All rights reserved.</span>
+        <span>Nehru Road, Chirkunda, Dhanbad, Jharkhand – 828202, India</span>
+      </div>
+    </div>
+  </footer>
 
-        <script src="assets/js/simple-lightbox.js"></script>
-        <script>
-	$(function(){
-        var $gallery = $('.gallery a').simpleLightbox();
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { if (window.scrollY > 40) navbar.classList.add('scrolled'); });
+    function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 
-        $gallery.on('show.simplelightbox', function(){
-            console.log('Requested for showing');
-        })
-            .on('shown.simplelightbox', function(){
-                console.log('Shown');
-            })
-            .on('close.simplelightbox', function(){
-                console.log('Requested for closing');
-            })
-            .on('closed.simplelightbox', function(){
-                console.log('Closed');
-            })
-            .on('change.simplelightbox', function(){
-                console.log('Requested for change');
-            })
-            .on('next.simplelightbox', function(){
-                console.log('Requested for next');
-            })
-            .on('prev.simplelightbox', function(){
-                console.log('Requested for prev');
-            })
-            .on('nextImageLoaded.simplelightbox', function(){
-                console.log('Next image loaded');
-            })
-            .on('prevImageLoaded.simplelightbox', function(){
-                console.log('Prev image loaded');
-            })
-            .on('changed.simplelightbox', function(){
-                console.log('Image changed');
-            })
-            .on('nextDone.simplelightbox', function(){
-                console.log('Image changed to next');
-            })
-            .on('prevDone.simplelightbox', function(){
-                console.log('Image changed to prev');
-            })
-            .on('error.simplelightbox', function(e){
-                console.log('No image found, go to the next/prev');
-                console.log(e);
-            });
-        });
-</script>
+    // Lightbox
+    const TOTAL = 21;
+    const BASE = 'https://adarsh10.github.io/gcwpl/assets/img/site/img';
+    let current = 0;
 
-
-    </body>
-
+    function openLightbox(index) {
+      current = index;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function prevImage() {
+      current = (current - 1 + TOTAL) % TOTAL;
+      updateLightbox();
+    }
+    function nextImage() {
+      current = (current + 1) % TOTAL;
+      updateLightbox();
+    }
+    function updateLightbox() {
+      document.getElementById('lightboxImg').src = BASE + (current + 1) + '.jpg';
+      document.getElementById('lightboxCounter').textContent = (current + 1) + ' / ' + TOTAL;
+    }
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') prevImage();
+      else if (e.key === 'ArrowRight') nextImage();
+      else if (e.key === 'Escape') closeLightbox();
+    });
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+  </script>
+</body>
 </html>
