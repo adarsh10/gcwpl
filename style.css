@@ -252,7 +252,7 @@ h4 { font-size: 1rem; }
 }
 .hero-badge span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
 .hero h1 { color: var(--white); margin-bottom: 1.25rem; }
-.hero h1 em { font-style: normal; color: var(--gold); }
+.hero h1 em { font-style: normal; color: #F4A49A; }
 .hero p {
   color: rgba(255,255,255,.75);
   font-size: 1.15rem;
